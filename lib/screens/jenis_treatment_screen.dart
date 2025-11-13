@@ -151,7 +151,7 @@ class JenisTreatmentScreen extends StatelessWidget {
           // ================= MAIN CONTAINER =================
           Positioned(
             left: 13 * sW,
-            top: 160 * sH,
+            top: 140 * sH,
             child: Container(
               width: 386 * sW,
               height: 720 * sH,
@@ -179,16 +179,202 @@ class JenisTreatmentScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Center(
-                    child: Text(
-                      "Halaman Jenis Treatment",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: const Color(0xFF451A2B),
-                        fontSize: 22 * sW,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w600,
+                  // ================= BANNER IMAGE DI BAWAH HEADER =================
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: Container(
+                      width: 386 * sW,
+                      height: 200 * sH,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/images/jenis treatment-Vektor Tangan.png",
+                          ),
+                          fit: BoxFit.contain,
+                        ),
                       ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 215 * sH,
+                    left: 50 * sW,
+                    child: SizedBox(
+                      width: 280 * sW,
+                      child: Text(
+                        "What would you like to get done today?",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: const Color(0xFF451A2B),
+                          fontSize: 20 * sW,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ),
+                  // ================= CARDS =================
+                  Positioned(
+                    top: 300 * sH,
+                    left: 20 * sW,
+                    child: Row(
+                      children: [
+                        // ================= CARD 1 =================
+                        Container(
+                          width: 168 * sW,
+                          height: 300 * sH, // lebih kecil karena tanpa Cancel
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 8 * sW,
+                            vertical: 11 * sH,
+                          ),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFAF7C85),
+                            borderRadius: BorderRadius.circular(12 * sW),
+                          ),
+                          child: Column(
+                            children: [
+                              // INNER BOX
+                              Container(
+                                width: 150 * sW,
+                                height: 230 * sH,
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 6 * sW,
+                                  vertical: 7 * sH,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFFFFEAEE),
+                                  borderRadius: BorderRadius.circular(5 * sW),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      width: 148 * sW,
+                                      height: 189 * sH,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                            "assets/images/jenis treatment-Nail Exten.png",
+                                          ),
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(height: 7 * sH),
+                                    Text(
+                                      'Nail Extention',
+                                      style: TextStyle(
+                                        color: const Color(0xFF451A2B),
+                                        fontSize: 12 * sW,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+
+                              SizedBox(height: 12 * sH),
+
+                              // BUTTON CONFIRM (SAJA)
+                              Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 10 * sW,
+                                  vertical: 6 * sH,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFF451A2B),
+                                  borderRadius: BorderRadius.circular(14 * sW),
+                                ),
+                                child: Text(
+                                  'Confirm',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 15 * sW,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+
+                        SizedBox(width: 12 * sW),
+
+                        // ================= CARD 2 =================
+                        Container(
+                          width: 168 * sW,
+                          height: 300 * sH,
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 8 * sW,
+                            vertical: 11 * sH,
+                          ),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFAF7C85),
+                            borderRadius: BorderRadius.circular(12 * sW),
+                          ),
+                          child: Column(
+                            children: [
+                              Container(
+                                width: 150 * sW,
+                                height: 230 * sH,
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 6 * sW,
+                                  vertical: 7 * sH,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFFFFEAEE),
+                                  borderRadius: BorderRadius.circular(5 * sW),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      width: 94 * sW,
+                                      height: 190 * sH,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                            "assets/images/jenis tretment-Nail art.png",
+                                          ),
+                                          fit: BoxFit.fill,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(height: 7 * sH),
+                                    Text(
+                                      'Nail Art',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 12 * sW,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+
+                              SizedBox(height: 12 * sH),
+
+                              // BUTTON CONFIRM
+                              Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 10 * sW,
+                                  vertical: 6 * sH,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFF451A2B),
+                                  borderRadius: BorderRadius.circular(14 * sW),
+                                ),
+                                child: Text(
+                                  'Confirm',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 15 * sW,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -199,10 +385,10 @@ class JenisTreatmentScreen extends StatelessWidget {
           // ================= BOTTOM NAVBAR =================
           Positioned(
             left: 0,
-            top: 769 * sH,
+            top: 800 * sH,
             child: Container(
               width: 412 * sW,
-              height: 148 * sH,
+              height: 120 * sH,
               padding: EdgeInsets.only(
                 top: 24 * sH,
                 left: 46 * sW,
@@ -230,16 +416,10 @@ class JenisTreatmentScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   _bottomNavItem(
-                    label: "Home",
-                    icon: Icons.home,
+                    label: "Back",
+                    icon: Icons.arrow_back,
                     onTap: () {
-                      Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => DashboardScreen(),
-                        ),
-                        (route) => false,
-                      );
+                      Navigator.pop(context);
                     },
                   ),
                   _bottomNavItem(
@@ -255,6 +435,20 @@ class JenisTreatmentScreen extends StatelessWidget {
                       );
                     },
                   ),
+                  _bottomNavItem(
+                    label: "Home",
+                    icon: Icons.home,
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DashboardScreen(),
+                        ),
+                        (route) => false,
+                      );
+                    },
+                  ),
+
                   _bottomNavItem(
                     label: "Gallery",
                     icon: Icons.photo_album,
