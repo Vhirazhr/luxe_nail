@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:luxe_nail/screens/jenis_treatment_screen.dart';
+import 'package:luxe_nail/utils/responsive.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import 'gallery_screen.dart';
@@ -14,14 +15,9 @@ class DashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final w = MediaQuery.of(context).size.width;
-    final h = MediaQuery.of(context).size.height;
-
-    const figmaW = 412;
-    const figmaH = 917;
-
-    final sW = w / figmaW;
-    final sH = h / figmaH;
+    // ==== Ganti scale ke util kamu (TANPA ubah struktur penggunaan) ====
+    final sW = Responsive.sW(context, 1); // == width / 412
+    final sH = Responsive.sH(context, 1); // == height / 917
 
     return Scaffold(
       key: _scaffoldKey,
@@ -296,10 +292,10 @@ class DashboardScreen extends StatelessWidget {
           // ================= BOTTOM NAVBAR =================
           Positioned(
             left: 0,
-            top: 769 * sH,
+            top: 800 * sH,
             child: Container(
               width: 412 * sW,
-              height: 148 * sH,
+              height: 120 * sH,
               padding: EdgeInsets.only(
                 top: 24 * sH,
                 left: 46 * sW,
@@ -400,6 +396,7 @@ class DashboardScreen extends StatelessWidget {
         children: [
           Icon(icon, color: const Color(0xFF975B73), size: 32),
           const SizedBox(height: 5),
+          const Text(''),
           Text(
             label,
             style: const TextStyle(
@@ -548,15 +545,13 @@ class DashboardScreen extends StatelessWidget {
               ),
               content: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.85,
-                // kasih lebar fleksibel biar dialog tahu constraint-nya
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       ConstrainedBox(
                         constraints: BoxConstraints(
-                          maxHeight:
-                              MediaQuery.of(context).size.height * 0.55, // aman
+                          maxHeight: MediaQuery.of(context).size.height * 0.55,
                         ),
                         child: TableCalendar(
                           firstDay: DateTime.utc(2024, 1, 1),

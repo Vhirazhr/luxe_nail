@@ -199,10 +199,10 @@ class ProfileScreen extends StatelessWidget {
           // ================= BOTTOM NAVBAR =================
           Positioned(
             left: 0,
-            top: 769 * sH,
+            top: 800 * sH,
             child: Container(
               width: 412 * sW,
-              height: 148 * sH,
+              height: 120 * sH,
               padding: EdgeInsets.only(
                 top: 24 * sH,
                 left: 46 * sW,
@@ -230,16 +230,10 @@ class ProfileScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   _bottomNavItem(
-                    label: "Home",
-                    icon: Icons.home,
+                    label: "Back",
+                    icon: Icons.arrow_back,
                     onTap: () {
-                      Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => DashboardScreen(),
-                        ),
-                        (route) => false,
-                      );
+                      Navigator.pop(context);
                     },
                   ),
                   _bottomNavItem(
@@ -255,6 +249,20 @@ class ProfileScreen extends StatelessWidget {
                       );
                     },
                   ),
+                  _bottomNavItem(
+                    label: "Home",
+                    icon: Icons.home,
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DashboardScreen(),
+                        ),
+                        (route) => false,
+                      );
+                    },
+                  ),
+
                   _bottomNavItem(
                     label: "Gallery",
                     icon: Icons.photo_album,

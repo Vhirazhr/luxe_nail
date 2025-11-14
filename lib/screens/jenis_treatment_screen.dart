@@ -122,7 +122,8 @@ class JenisTreatmentScreen extends StatelessWidget {
                   Positioned(
                     top: Responsive.sH(context, 300),
                     left: Responsive.sW(context, 20),
-                    child: Row(
+                    child: Wrap(
+                      spacing: Responsive.sW(context, 15),
                       children: [
                         _treatmentCard(
                           context: context,
@@ -133,7 +134,6 @@ class JenisTreatmentScreen extends StatelessWidget {
                             MaterialPageRoute(builder: (_) => DesignScreen()),
                           ),
                         ),
-                        SizedBox(width: Responsive.sW(context, 15)),
                         _treatmentCard(
                           context: context,
                           img: "assets/images/jenis tretment-Nail art.png",
